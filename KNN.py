@@ -8,19 +8,9 @@ from collections import Counter
 class KNN:
 
     def __init__(self, k=3):
-        self.k = self._setK(k)
+        self.k = k
         self.X_train = []
         self.y_train = []
-
-    def _setK(self, k):
-        try:
-            if k % 2 == 0:
-                raise Exception
-        except:
-            print("Sorry, even numbers are not allowed.")
-            sys.exit(1)
-
-        return k
 
     def fit(self, X, y):
         self.X_train = X
